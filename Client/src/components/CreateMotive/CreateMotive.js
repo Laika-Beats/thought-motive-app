@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
-const CreateMotive = () => {
-  const [textInput, setTextInput] = useState("");
-  const [motives, setMotives] = useState([]);
-
+const CreateMotive = ({ textInput, setTextInput, motives, setMotives }) => {
   const motiveInputHandler = (event) => {
     setTextInput(event.target.value);
   };

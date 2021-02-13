@@ -1,12 +1,12 @@
 import React from "react";
 import Motive from "./Motive";
 
-const MotiveFeed = () => {
+const MotiveFeed = ({ motives, setMotives }) => {
   return (
     <div>
-      <Motive />
-      <Motive />
-      <Motive />
+      {motives.map((motive) => (
+        <Motive motive={motive} motives={motives} setMotives={setMotives} />
+      ))}
     </div>
   );
 };

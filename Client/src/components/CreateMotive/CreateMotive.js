@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 
 const CreateMotive = () => {
-  // const [motives, setMotives] = useState([]);
-  const [inputText, setInputText] = useState("");
+  const [textInput, setTextInput] = useState("");
+  const [motives, setMotives] = useState([]);
 
   const motiveInputHandler = (event) => {
-    console.log(inputText);
-    setInputText(event.target.value);
+    setTextInput(event.target.value);
   };
-  const createMotiveHandler = () => {};
+  const createMotiveHandler = (event) => {
+    event.preventDefault();
+    setMotives([...motives, textInput]);
+    setTextInput(" ");
+  };
 
   return (
     <form onSubmit={createMotiveHandler}>
-      <textarea onChange={motiveInputHandler} />
+      <textarea value={textInput} onChange={motiveInputHandler} />
       <button>Submit</button>
     </form>
   );

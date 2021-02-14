@@ -6,7 +6,6 @@ import { fetchMotives } from "./actions/motives";
 
 function App() {
   const [currentId, setCurrentId] = useState(0);
-  const [textInput, setTextInput] = useState("");
   const [motiveData, setMotiveData] = useState({
     message: " ",
   });
@@ -21,8 +20,6 @@ function App() {
   return (
     <div className="App">
       <CreateMotive
-        textInput={textInput}
-        setTextInput={setTextInput}
         motiveData={motiveData}
         setMotiveData={setMotiveData}
         currentId={currentId}

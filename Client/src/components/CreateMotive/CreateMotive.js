@@ -4,10 +4,6 @@ import { useDispatch } from "react-redux";
 import { createMotive, updateMotive } from "../../actions/motives";
 
 const CreateMotive = ({
-  textInput,
-  setTextInput,
-  motives,
-  setMotives,
   motiveData,
   setMotiveData,
   currentId,
@@ -23,33 +19,32 @@ const CreateMotive = ({
     if (motive) setMotiveData(motive);
   }, [motive]);
 
-  const motiveInputHandler = (event) => {
-    setTextInput(event.target.value);
-  };
-  const createMotiveHandler = (event) => {
+  // BUTTON HANDLERS
+  const submitHandler = (event) => {
     event.preventDefault();
     if (currentId === 0) {
       dispatch(createMotive({ ...motiveData }));
-      motiveData.message = " ";
-      setCurrentId(0);
+      clearHandler();
     } else {
       dispatch(updateMotive(currentId, { ...motiveData }));
-      motiveData.message = " ";
-      setCurrentId(0);
+      clearHandler();
     }
+  };
+  const clearHandler = () => {
+    setCurrentId(0);
+    setMotiveData({ message: " " });
   };
 
   return (
-    <form onSubmit={createMotiveHandler}>
+    <form>
       <textarea
         value={motiveData.message}
         onChange={(e) =>
           setMotiveData({ ...motiveData, message: e.target.value })
         }
-
-        // onChange={motiveInputHandler}
       />
-      <button>Submit</button>
+      <button onClick={submitHandler}>Submit</button>
+      <button onClick={clearHandler}>Clear</button>
     </form>
   );
 };

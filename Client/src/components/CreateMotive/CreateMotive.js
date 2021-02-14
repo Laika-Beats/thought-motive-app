@@ -28,7 +28,7 @@ const CreateMotive = ({
   const createMotiveHandler = (event) => {
     event.preventDefault();
     dispatch(createMotive({ ...motiveData }));
-    setTextInput(" ");
+    motiveData.message = " ";
   };
 
   return (

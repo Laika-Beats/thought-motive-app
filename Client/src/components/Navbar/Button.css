@@ -1,0 +1,48 @@
+:root {
+  --primary: #4da8da;
+}
+
+.nbtn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary);
+  margin-right: 5rem;
+}
+
+.nbtn:hover {
+  padding: 8px 20px;
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #4da8da;
+  transition: 250ms;
+}
+
+.nbtn--primary {
+  background-color: var(--primary);
+}
+
+.nbtn--outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+
+.nbtn--medium {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.nbtn--large {
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+}

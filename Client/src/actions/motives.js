@@ -3,7 +3,7 @@ import * as api from "../api/api";
 // FETCH
 export const fetchMotives = () => async (dispatch) => {
   try {
-    const { data } = await api.fetchMotives;
+    const { data } = await api.fetchMotives();
     dispatch({ type: "FETCH_ALL", payload: data });
   } catch (error) {
     console.log(error);
@@ -23,7 +23,7 @@ export const createMotive = (motive) => async (dispatch) => {
 // DELETE
 export const deleteMotive = (id) => async (dispatch) => {
   try {
-    const { data } = await api.deleteMotive(id);
+    await api.deleteMotive(id);
     dispatch({ type: "DELETE", payload: id });
   } catch (error) {
     console.log(error);

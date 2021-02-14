@@ -54,7 +54,7 @@ export const deleteMotive = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(_id))
     return res.status(404).send("No motives with that id.");
 
-  await Motive.findByIdAndRemove(id);
+  await Motive.findByIdAndRemove(_id);
 
   res.json({ message: "Motive deleted succuessfully." });
 };

@@ -36,15 +36,22 @@ const CreateMotive = ({
   };
 
   return (
-    <form>
+    <form className="form-container">
+      <h1>Write your motive: </h1>
       <textarea
+        className="text-area"
         value={motiveData.message}
         onChange={(e) =>
           setMotiveData({ ...motiveData, message: e.target.value })
         }
       />
-      <button onClick={submitHandler}>Motivate</button>
-      <button onClick={clearHandler}>Clear</button>
+
+      <button className="submit-clear" onClick={submitHandler}>
+        Motivate
+      </button>
+      <button className="submit-clear" onClick={clearHandler}>
+        Clear
+      </button>
     </form>
   );
 };

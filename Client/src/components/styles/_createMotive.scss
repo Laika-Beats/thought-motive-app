@@ -1,0 +1,21 @@
+.form-container {
+  border: black solid 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-clear {
+  justify-content: space-between;
+  text-align: center;
+  margin: 0.1rem;
+  min-width: 7rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.text-area {
+  height: 4rem;
+}

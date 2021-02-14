@@ -7,6 +7,7 @@ import { faTrashAlt, faHeart, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const Motive = ({ motive, setCurrentId }) => {
   const dispatch = useDispatch();
+  const user = "Laika Beats";
 
   useEffect(() => {
     dispatch(fetchMotives());
@@ -26,7 +27,7 @@ const Motive = ({ motive, setCurrentId }) => {
 
   return (
     <div className="motive-container">
-      <h2 className="user-name">User</h2>
+      <h2 className="user-name">{user}</h2>
       <div className="date-edit">
         <h6>{Moment(motive.createdAt).fromNow()}</h6>
         <button onClick={editHandler}>
@@ -36,7 +37,7 @@ const Motive = ({ motive, setCurrentId }) => {
       <h3 className="motive-message">{motive.message}</h3>
       <div className="like-delete">
         <button>
-          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon icon={faHeart} /> 0 Favs
         </button>
         <button onClick={deleteMotiveHandler}>
           <FontAwesomeIcon icon={faTrashAlt} />

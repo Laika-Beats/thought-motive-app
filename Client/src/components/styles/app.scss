@@ -8,5 +8,13 @@ body {
   min-height: 100vh;
 }
 
+.App {
+  justify-content: center;
+  align-items: center;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+
 @import "./motive";
 @import "./motiveFeed";
+@import "./createMotive";

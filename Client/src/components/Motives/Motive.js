@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteMotive, fetchMotives } from "../../actions/motives";
+import Moment from "moment";
 
 const Motive = ({ motive, setCurrentId }) => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const Motive = ({ motive, setCurrentId }) => {
   return (
     <div>
       <h2>User</h2>
-      <h4>date</h4>
+      <h6>{Moment(motive.createdAt).fromNow()}</h6>
       <h3>{motive.message}</h3>
       <button onClick={editHandler}>Edit</button>
       <button onClick={deleteMotiveHandler}>Delete</button>

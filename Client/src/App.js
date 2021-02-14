@@ -25,11 +25,7 @@ function App() {
         currentId={currentId}
         setCurrentId={setCurrentId}
       />
-      <MotiveFeed
-        motiveData={motiveData}
-        motives={motives}
-        setCurrentId={setCurrentId}
-      />
+      <MotiveFeed motives={motives} setCurrentId={setCurrentId} />
     </div>
   );
 }

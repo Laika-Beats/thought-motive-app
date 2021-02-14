@@ -4,12 +4,13 @@ import { deleteMotive, fetchMotives } from "../../actions/motives";
 
 const Motive = ({ motive, setCurrentId }) => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchMotives());
   }, [setCurrentId]);
 
+  // BUTTON HANDLERS
   const deleteMotiveHandler = async () => {
-    console.log(motive._id);
     await dispatch(deleteMotive(motive._id));
     await dispatch(fetchMotives());
   };

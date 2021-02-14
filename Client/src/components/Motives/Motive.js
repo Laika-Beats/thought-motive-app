@@ -21,6 +21,7 @@ const Motive = ({ motive, setCurrentId }) => {
   const editHandler = () => {
     const editMotive = () => {
       setCurrentId(motive._id);
+      window.scrollTo(0, 0);
     };
     editMotive();
   };

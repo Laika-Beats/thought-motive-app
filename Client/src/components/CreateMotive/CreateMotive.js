@@ -38,6 +38,7 @@ const CreateMotive = ({
   return (
     <form className="form-container">
       <h1>Write your motive: </h1>
+      <h3>{motiveData.message}</h3>
       <textarea
         className="text-area"
         value={motiveData.message}

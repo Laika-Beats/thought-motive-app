@@ -37,7 +37,7 @@ const Motive = ({ motive, setCurrentId }) => {
       <h3 className="motive-message">{motive.message}</h3>
       <div className="like-delete">
         <button className="btn">
-          <FontAwesomeIcon icon={faHeart} /> 0
+          <FontAwesomeIcon className="icon" icon={faHeart} /> 0
         </button>
         <button className="btn" onClick={deleteMotiveHandler}>
           <FontAwesomeIcon icon={faTrashAlt} />

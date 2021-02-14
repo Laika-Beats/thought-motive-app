@@ -11,6 +11,7 @@ const CreateMotive = ({
   motiveData,
   setMotiveData,
   currentId,
+  setCurrentId,
 }) => {
   const dispatch = useDispatch();
 
@@ -27,17 +28,25 @@ const CreateMotive = ({
   };
   const createMotiveHandler = (event) => {
     event.preventDefault();
-    dispatch(createMotive({ ...motiveData }));
-    motiveData.message = " ";
+    if (currentId === 0) {
+      dispatch(createMotive({ ...motiveData }));
+      motiveData.message = " ";
+      setCurrentId(0);
+    } else {
+      dispatch(updateMotive(currentId, { ...motiveData }));
+      motiveData.message = " ";
+      setCurrentId(0);
+    }
   };
 
   return (
     <form onSubmit={createMotiveHandler}>
       <textarea
+        value={motiveData.message}
         onChange={(e) =>
           setMotiveData({ ...motiveData, message: e.target.value })
         }
-        value={motiveData.message}
+
         // onChange={motiveInputHandler}
       />
       <button>Submit</button>

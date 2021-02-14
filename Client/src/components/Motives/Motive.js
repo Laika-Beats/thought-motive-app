@@ -1,13 +1,23 @@
-import React, { setState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { deleteMotive } from "../../actions/motives";
+import { deleteMotive, fetchMotives } from "../../actions/motives";
 
-const Motive = ({ motive, motives }) => {
+const Motive = ({ motive, setCurrentId }) => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchMotives());
+  }, [setCurrentId]);
 
-  const deleteMotiveHandler = () => {
+  const deleteMotiveHandler = async () => {
     console.log(motive._id);
-    dispatch(deleteMotive(motive._id));
+    await dispatch(deleteMotive(motive._id));
+    await dispatch(fetchMotives());
+  };
+  const editHandler = () => {
+    const editMotive = () => {
+      setCurrentId(motive._id);
+    };
+    editMotive();
   };
 
   return (
@@ -15,7 +25,7 @@ const Motive = ({ motive, motives }) => {
       <h2>User</h2>
       <h4>date</h4>
       <h3>{motive.message}</h3>
-      <button>Like</button>
+      <button onClick={editHandler}>Edit</button>
       <button onClick={deleteMotiveHandler}>Delete</button>
     </div>
   );

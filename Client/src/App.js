@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchMotives());
-  }, [dispatch, motives]);
+  }, [dispatch, currentId]);
 
   return (
     <div className="App">
@@ -28,7 +28,11 @@ function App() {
         currentId={currentId}
         setCurrentId={setCurrentId}
       />
-      <MotiveFeed motiveData={motiveData} motives={motives} />
+      <MotiveFeed
+        motiveData={motiveData}
+        motives={motives}
+        setCurrentId={setCurrentId}
+      />
     </div>
   );
 }

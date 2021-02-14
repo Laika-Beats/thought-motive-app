@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteMotive, fetchMotives } from "../../actions/motives";
 import Moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt, faHeart, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const Motive = ({ motive, setCurrentId }) => {
   const dispatch = useDispatch();
@@ -27,12 +29,18 @@ const Motive = ({ motive, setCurrentId }) => {
       <h2 className="user-name">User</h2>
       <div className="date-edit">
         <h6>{Moment(motive.createdAt).fromNow()}</h6>
-        <button onClick={editHandler}>Edit</button>
+        <button onClick={editHandler}>
+          <FontAwesomeIcon icon={faEdit} />
+        </button>
       </div>
       <h3 className="motive-message">{motive.message}</h3>
       <div className="like-delete">
-        <button>Like</button>
-        <button onClick={deleteMotiveHandler}>Delete</button>
+        <button>
+          <FontAwesomeIcon icon={faHeart} />
+        </button>
+        <button onClick={deleteMotiveHandler}>
+          <FontAwesomeIcon icon={faTrashAlt} />
+        </button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import * as api from "../api";
+import * as api from "../api/api";
 
 // FETCH
 export const fetchMotives = () => async (dispatch) => {

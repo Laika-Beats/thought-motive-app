@@ -4,7 +4,6 @@ import MotiveFeed from "../Motives/MotiveFeed";
 import CreateMotive from "../CreateMotive/CreateMotive";
 import { fetchMotives } from "../../actions/motives";
 import "../styles/app.scss";
-import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
   const [currentId, setCurrentId] = useState(0);
@@ -21,7 +20,6 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
       <div className="App">
         <CreateMotive
           motiveData={motiveData}

@@ -43,7 +43,7 @@ const CreateMotive = ({
           setMotiveData({ ...motiveData, message: e.target.value })
         }
       />
-      <button onClick={submitHandler}>Submit</button>
+      <button onClick={submitHandler}>Motivate</button>
       <button onClick={clearHandler}>Clear</button>
     </form>
   );

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MotiveFeed from "./components/Motives/MotiveFeed";
 import CreateMotive from "./components/CreateMotive/CreateMotive";
 import { fetchMotives } from "./actions/motives";
+import "./components/styles/app.scss";
 
 function App() {
   const [currentId, setCurrentId] = useState(0);

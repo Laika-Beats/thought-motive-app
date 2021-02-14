@@ -23,7 +23,7 @@ const Motive = ({ motive, setCurrentId }) => {
   };
 
   return (
-    <div>
+    <div className="motive">
       <h2>User</h2>
       <h6>{Moment(motive.createdAt).fromNow()}</h6>
       <h3>{motive.message}</h3>

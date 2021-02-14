@@ -1,3 +1,33 @@
-.motive {
+.motive-container {
   border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  max-width: 60vw;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.motive-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

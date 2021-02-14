@@ -23,12 +23,17 @@ const Motive = ({ motive, setCurrentId }) => {
   };
 
   return (
-    <div className="motive">
-      <h2>User</h2>
-      <h6>{Moment(motive.createdAt).fromNow()}</h6>
-      <h3>{motive.message}</h3>
-      <button onClick={editHandler}>Edit</button>
-      <button onClick={deleteMotiveHandler}>Delete</button>
+    <div className="motive-container">
+      <h2 className="user-name">User</h2>
+      <div className="date-edit">
+        <h6>{Moment(motive.createdAt).fromNow()}</h6>
+        <button onClick={editHandler}>Edit</button>
+      </div>
+      <h3 className="motive-message">{motive.message}</h3>
+      <div className="like-delete">
+        <button>Like</button>
+        <button onClick={deleteMotiveHandler}>Delete</button>
+      </div>
     </div>
   );
 };

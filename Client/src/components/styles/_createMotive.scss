@@ -1,21 +1,33 @@
 .form-container {
-  border: black solid 1px;
+  border: #eefbfb solid 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
 }
 
 .submit-clear {
   justify-content: space-between;
   text-align: center;
   margin: 0.1rem;
-  min-width: 7rem;
+  min-width: 10rem;
+  background: none;
+  border: #eefbfb solid 1px;
+  color: #eefbfb;
+  &:hover {
+    background: #4da8da;
+  }
+  padding: 1rem;
+  box-shadow: 2px 2px 20px #203647;
 }
 
 h1 {
   font-size: 1.5rem;
+  color: #eefbfb;
 }
 
 .text-area {
   height: 4rem;
+  width: 16rem;
+  margin: 10px;
 }

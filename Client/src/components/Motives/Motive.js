@@ -30,16 +30,16 @@ const Motive = ({ motive, setCurrentId }) => {
       <h2 className="user-name">{user}</h2>
       <div className="date-edit">
         <h6>{Moment(motive.createdAt).fromNow()}</h6>
-        <button onClick={editHandler}>
+        <button className="btn" onClick={editHandler}>
           <FontAwesomeIcon icon={faEdit} />
         </button>
       </div>
       <h3 className="motive-message">{motive.message}</h3>
       <div className="like-delete">
-        <button>
-          <FontAwesomeIcon icon={faHeart} /> 0 Favs
+        <button className="btn">
+          <FontAwesomeIcon icon={faHeart} /> 0
         </button>
-        <button onClick={deleteMotiveHandler}>
+        <button className="btn" onClick={deleteMotiveHandler}>
           <FontAwesomeIcon icon={faTrashAlt} />
         </button>
       </div>
